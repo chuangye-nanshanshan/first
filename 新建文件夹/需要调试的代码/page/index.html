@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>教师管理系统</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body{font-family: "Microsoft YaHei"}
+        .navbar-inverse{border-radius: 0}
+        .table{text-align: center;}
+        .table-bordered>thead>tr:first-child>td{border-bottom: none;font-weight:bold}
+        .pagination{margin: 0}
+        .loading{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background: url("data:image/gif;base64,R0lGODlhKwALAPEAAP///7u7u97e3ru7uyH5BAkKAAAAIf4aQ3JlYXRlZCB3aXRoIGFqYXhsb2FkLmluZm8AIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAKwALAAACMoSOCMuW2diD88UKG95W88uF4DaGWFmhZid93pq+pwxnLUnXh8ou+sSz+T64oCAyTBUAACH5BAkKAAAALAAAAAArAAsAAAI9xI4IyyAPYWOxmoTHrHzzmGHe94xkmJifyqFKQ0pwLLgHa82xrekkDrIBZRQab1jyfY7KTtPimixiUsevAAAh+QQJCgAAACwAAAAAKwALAAACPYSOCMswD2FjqZpqW9xv4g8KE7d54XmMpNSgqLoOpgvC60xjNonnyc7p+VKamKw1zDCMR8rp8pksYlKorgAAIfkECQoAAAAsAAAAACsACwAAAkCEjgjLltnYmJS6Bxt+sfq5ZUyoNJ9HHlEqdCfFrqn7DrE2m7Wdj/2y45FkQ13t5itKdshFExC8YCLOEBX6AhQAADs=") center center no-repeat;
+            background-color: rgba(0,0,0,0.3);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            display: none;
+        }
+        .btn-loading,
+        .btn-loading:hover,
+        .btn-loading:focus,
+        .btn-loading:active{
+            background-image: url("data:image/gif;base64,R0lGODlhKwALAPEAAP///7u7u97e3ru7uyH5BAkKAAAAIf4aQ3JlYXRlZCB3aXRoIGFqYXhsb2FkLmluZm8AIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAKwALAAACMoSOCMuW2diD88UKG95W88uF4DaGWFmhZid93pq+pwxnLUnXh8ou+sSz+T64oCAyTBUAACH5BAkKAAAALAAAAAArAAsAAAI9xI4IyyAPYWOxmoTHrHzzmGHe94xkmJifyqFKQ0pwLLgHa82xrekkDrIBZRQab1jyfY7KTtPimixiUsevAAAh+QQJCgAAACwAAAAAKwALAAACPYSOCMswD2FjqZpqW9xv4g8KE7d54XmMpNSgqLoOpgvC60xjNonnyc7p+VKamKw1zDCMR8rp8pksYlKorgAAIfkECQoAAAAsAAAAACsACwAAAkCEjgjLltnYmJS6Bxt+sfq5ZUyoNJ9HHlEqdCfFrqn7DrE2m7Wdj/2y45FkQ13t5itKdshFExC8YCLOEBX6AhQAADs=");
+            background-position: center;
+            background-repeat: no-repeat;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><b>黑马教师管理系统</b></a></div>
+        <div class="navbar-right"><span class="navbar-text">Copyright © 2017</span></div>
+    </div>
+</header>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading text-right">
+            <h5 class="pull-left">教师基本信息管理</h5>
+            <button id="editBtn" class="btn btn-default btn-sm">添加教师信息</button>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td width="5%">序号</td>
+                        <td width="10%">姓名</td>
+                        <td width="10%">性别</td>
+                        <td width="15%">所属学院</td>
+                        <td >个人简介</td>
+                        <td width="20%">录入时间</td>
+                        <td width="10%">操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--TODO 动态渲染-->
+                </tbody>
+            </table>
+            <div class="text-right">
+                <ul id="paginator">
+                    <!--TODO 动态渲染-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loading"></div>
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">添加教师信息</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">删除教师信息</h4>
+            </div>
+            <div class="modal-body">
+                您是否确定要删除 <span class="text-danger"></span> 教师的信息吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--模板渲染页面列表-->
+<script type="text/template" id="xiaozhu1">
+    <% for(var i = 0; i < list.length; i++){ %>
+    <%  var item=list[i]  %>
+    <tr>
+        <td><%= (pageNum-1)*pageSize+i+1 %></td>
+        <td><%= item.name %></td>
+        <td><%= item.sex %></td>
+        <td><%= item.academy %></td>
+        <td><%= item.introduce %></td>
+        <td><%= item.createTime %></td>
+        <td>
+            <a href="javascript:;" class="btn_edit">编辑</a>
+            <a href="javascript:;" class="btn_delete">删除</a>
+        </td>
+    </tr>
+    <% } %>
+</script>
+<script type="text/template" id="xiaozhu2">
+    <div class="form-group">
+        <% if(id){ %><input type="hidden" name="id" value="<%=id%>"/><%}%>
+        <input type="text" class="form-control" name="name" value="<%=name%>" placeholder="请输入姓名">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="sex" value="<%=sex%>"  placeholder="请输入性别">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="academy" value="<%=academy%>"  placeholder="请输入所属学院">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" name="introduce" placeholder="请输入个人简介"><%=introduce%></textarea>
+    </div>
+</script>
+<script src="assets/jquery/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script>
+    $(function(){
+
+
+        var $loading = $('.loading');
+        var $editModal = $('#editModal');
+        function render(){
+            $.ajax({
+                type:'get',
+                url:'../api/findUsers.php',
+                data:{
+                    pageNum: 1,
+                    pageSize: 12
+                },
+                dataType:'json',
+                beforeSend:function(){
+                    $loading.show();
+                },
+                success:function(data){
+                    $("tbody").html(template('xiaozhu1',data));
+                    $loading.hide();
+                    $('#paginator').bootstrapPaginator({
+                        /*设置bootstrap版本*/
+                        bootstrapMajorVersion:3,
+                        /*设置按钮大小*/
+                        size:'small',
+                        /*当前页*/
+                        currentPage:data.pageNum,
+                        /*显示多少个分页按钮*/
+                        numberOfPages:10,
+                        /*数据多少页*/
+                        totalPages:Math.ceil(data.total/data.pageSize)
+                    })
+                }
+            });
+        }
+        render();
+
+        $('#editBtn').on('click',function(){
+            $editModal.modal('show');
+            $editModal.find('form').html(template('xiaozhu2',{}));
+        });
+        $editModal.on('click','.btn-primary',function(){
+            var $btn = $(this);
+           var form = document.querySelector('form');
+            console.log(form);
+            var data1 = new FormData(form);
+
+//            var data = $editModal.find('form').serialize();
+//            console.log(data);
+            $.ajax({
+                type:'post',
+                url:'../api/saveUser.php',
+                data:data1,
+                dataType:'json',
+                beforeSend:function(){
+                    $btn.addClass('btn-loading');
+                },
+                success:function(data){
+                    if(data.status=='ok'){
+                        $btn.removeClass('btn-loading');
+                        $editModal.modal('hide');
+                        render();
+                    }
+                }
+            })
+        })
+
+
+    })
+</script>
+</body>
+</html>

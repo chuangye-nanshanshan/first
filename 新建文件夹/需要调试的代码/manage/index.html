@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>黑马教师管理系统</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body{font-family: "Microsoft YaHei"}
+        .navbar-inverse{border-radius: 0}
+        .table{text-align: center;}
+        .table-bordered>thead>tr:first-child>td{border-bottom: none;font-weight:bold}
+        .pagination{margin: 0}
+        .loading{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background: url("data:image/gif;base64,R0lGODlhKwALAPEAAP///7u7u97e3ru7uyH5BAkKAAAAIf4aQ3JlYXRlZCB3aXRoIGFqYXhsb2FkLmluZm8AIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAKwALAAACMoSOCMuW2diD88UKG95W88uF4DaGWFmhZid93pq+pwxnLUnXh8ou+sSz+T64oCAyTBUAACH5BAkKAAAALAAAAAArAAsAAAI9xI4IyyAPYWOxmoTHrHzzmGHe94xkmJifyqFKQ0pwLLgHa82xrekkDrIBZRQab1jyfY7KTtPimixiUsevAAAh+QQJCgAAACwAAAAAKwALAAACPYSOCMswD2FjqZpqW9xv4g8KE7d54XmMpNSgqLoOpgvC60xjNonnyc7p+VKamKw1zDCMR8rp8pksYlKorgAAIfkECQoAAAAsAAAAACsACwAAAkCEjgjLltnYmJS6Bxt+sfq5ZUyoNJ9HHlEqdCfFrqn7DrE2m7Wdj/2y45FkQ13t5itKdshFExC8YCLOEBX6AhQAADs=") center center no-repeat;
+            background-color: rgba(0,0,0,0.3);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            display: none;
+        }
+        .btn-loading,
+        .btn-loading:hover,
+        .btn-loading:focus,
+        .btn-loading:active{
+            background-image: url("data:image/gif;base64,R0lGODlhKwALAPEAAP///7u7u97e3ru7uyH5BAkKAAAAIf4aQ3JlYXRlZCB3aXRoIGFqYXhsb2FkLmluZm8AIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAKwALAAACMoSOCMuW2diD88UKG95W88uF4DaGWFmhZid93pq+pwxnLUnXh8ou+sSz+T64oCAyTBUAACH5BAkKAAAALAAAAAArAAsAAAI9xI4IyyAPYWOxmoTHrHzzmGHe94xkmJifyqFKQ0pwLLgHa82xrekkDrIBZRQab1jyfY7KTtPimixiUsevAAAh+QQJCgAAACwAAAAAKwALAAACPYSOCMswD2FjqZpqW9xv4g8KE7d54XmMpNSgqLoOpgvC60xjNonnyc7p+VKamKw1zDCMR8rp8pksYlKorgAAIfkECQoAAAAsAAAAACsACwAAAkCEjgjLltnYmJS6Bxt+sfq5ZUyoNJ9HHlEqdCfFrqn7DrE2m7Wdj/2y45FkQ13t5itKdshFExC8YCLOEBX6AhQAADs=");
+            background-position: center;
+            background-repeat: no-repeat;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><b>黑马教师管理系统</b></a></div>
+        <div class="navbar-right"><span class="navbar-text">Copyright © 2017</span></div>
+    </div>
+</header>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading text-right">
+            <h5 class="pull-left">教师基本信息管理</h5>
+            <button id="addUser" class="btn btn-default btn-sm">添加教师信息</button>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <td width="5%">序号</td>
+                        <td width="10%">姓名</td>
+                        <td width="10%">性别</td>
+                        <td width="15%">所属学院</td>
+                        <td >个人简介</td>
+                        <td width="20%">录入时间</td>
+                        <td width="10%">操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hidden">
+                        <td>1</td>
+                        <td>张三丰</td>
+                        <td>男</td>
+                        <td>武当山</td>
+                        <td>张三丰，名君宝（一说“全一”）、号三丰。</td>
+                        <td>2017-02-22</td>
+                        <td>
+                            <a href="#editModal" data-toggle="modal">编辑</a>
+                            <a href="#deleteModal" data-toggle="modal">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-right">
+                <ul class="pull-right" id="paginator"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">添加教师信息</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="editBtn">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">删除教师信息</h4>
+            </div>
+            <div class="modal-body">
+                <h5>您是否确定要删除 <b class="text-danger">张三丰</b> 教师的信息吗？</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="deleteBtn">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loading"></div>
+<script type="text/html" id="listTpl">
+    {{each model.list}}
+        <tr class="text-center" >
+            <td>{{(model.pageNum -1)*model.pageSize + $index + 1}}</td>
+            <td>{{$value.name}}</td>
+            <td>{{$value.sex}}</td>
+            <td>{{$value.academy}}</td>
+            <td>{{$value.introduce}}</td>
+            <td>{{$value.createTime}}</td>
+            <td>
+                <a data-id="{{$value.id}}"  href="javascript:;" class="editModal">修改</a>
+                <a data-id="{{$value.id}}" data-name="{{$value.name}}" href="javascript:;" class="deleteModal">删除</a>
+            </td>
+        </tr>
+    {{/each}}
+</script>
+<script type="text/html" id="fromTpl">
+    <div class="form-group">
+        {{ if model.id }}<input type="hidden" name="id" value="{{model.id}}"/>{{ /if }}
+        <input type="text" class="form-control" value="{{model.name}}" placeholder="请输入姓名" name="name">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" value="{{model.sex}}" placeholder="请输入性别" name="sex">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" value="{{model.academy}}" placeholder="请输入所属学院" name="academy">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" placeholder="请输入个人简介" name="introduce">{{model.introduce}}</textarea>
+    </div>
+</script>
+<script src="assets/jquery/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="assets/artTemplate/template.js"></script>
+<script>
+    $(function () {
+        var $loading = $('.loading');
+        var $editModal = $('#editModal');
+        var $deleteModal = $('#deleteModal');
+        var $form = $('#form');
+        var getUser = function(id){
+            var user = {};
+            $.each(list,function(k,v){
+                if(v && v.id == id){
+                    user = v;
+                    return false;
+                }
+            });
+            return user;
+        };
+
+        var currentPageNum = 1;
+        var list = [];
+
+        var render = function () {
+            $.ajax({
+                type: 'get',
+                url: '../api/findUsers.php',
+                data: {
+                    pageNum: currentPageNum,
+                    pageSize: 10
+                },
+                dataType: 'json',
+                beforeSend:function(){
+                    $loading.show();
+                },
+                success: function (data) {
+                    $loading.hide();
+                    list = data.list;
+                    $('tbody').html(template('listTpl', {model: data}));
+                    $("#paginator").bootstrapPaginator({
+                        bootstrapMajorVersion: 3,
+                        size: 'small',
+                        currentPage: data.pageNum,
+                        totalPages: Math.ceil(data.total/data.pageSize),
+                        numberOfPages: 10,
+                        onPageClicked: function (event, originalEvent, type, page) {
+                            render(currentPageNum = page);
+                        }
+                    });
+                }
+            });
+        };
+
+        render();
+
+        /*添加*/
+        $('#addUser').on('click',function(){
+            $editModal.find('.modal-title').html('添加教师信息');
+            $('#editBtn').html('保存').data('type','save');
+            $form.html(template('fromTpl', {model: {}}));
+            $editModal.modal('show');
+        });
+
+        /*修改*/
+        $('body').on('click','.editModal',function(){
+            $editModal.find('.modal-title').html('修改教师信息');
+            $('#editBtn').html('修改').data('type','update');
+            var user = getUser($(this).data('id'));
+            $form.html(template('fromTpl', {model: user}));
+            $editModal.modal('show');
+        });
+
+        /*保存和修改*/
+        $('#editBtn').on('click',function(){
+            if($('#editBtn').hasClass('btn-loading'))return false;
+            $('#editBtn').addClass('btn-loading');
+            $.ajax({
+                type:'post',
+                url:'../api/'+$('#editBtn').data('type')+'User.php',
+                data: $form.serialize(),
+                dataType: 'json',
+                success:function(data){
+                    if(data.status == 'ok'){
+                        $editModal.modal('hide');
+                        currentPageNum = $('#editBtn').data('type')=='save'?1:currentPageNum;
+                        render();
+                    }
+                    $('#editBtn').removeClass('btn-loading');
+                }
+            });
+        });
+
+        /*删除*/
+        $('body').on('click','.deleteModal',function(){
+            $deleteModal.data('id',$(this).data('id'));
+            $deleteModal.find('.text-danger').html($(this).data('name'));
+            $deleteModal.modal('show');
+        });
+        $('#deleteBtn').on('click',function(){
+            if($('#deleteBtn').hasClass('btn-loading'))return false;
+            $('#deleteBtn').addClass('btn-loading');
+            $.ajax({
+                type:'post',
+                url:'../api/removeUser.php',
+                data: {id:$deleteModal.data('id')},
+                dataType: 'json',
+                success:function(data){
+                    if(data.status == 'ok'){
+                        $('#deleteModal').modal('hide');
+                        render();
+                    }
+                    $('#deleteBtn').removeClass('btn-loading');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

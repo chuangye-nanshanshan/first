@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<label for="">
+			头像: <input type="file">
+		</label>
+
+		<label for="">
+			<input type="button" value="保存">
+		</label>
+	</form>
+	<div class="progress"></div>
+	<script>
+		var btn = document.querySelector('[type=button]');
+
+		btn.onclick = function () {
+			// 获取上传文件元素
+			var file = document.querySelector('[type=file]');
+
+			// 实例化FormData
+			var formData = new FormData;
+
+			// 加工处理数据
+			formData.append('upload', file.files[0]);			
+
+			var xhr = new XMLHttpRequest;
+
+			// 监听文件上传进度
+			xhr.upload.onprogress = function (ev) {
+				// 事件对角记录了当前事件的一些相关信息
+				// 回调函数的第一个参数
+				// console.log(Math.ceil((ev.loaded / ev.total) * 100) + '%');
+				var progress = Math.ceil((ev.loaded / ev.total) * 100) + '%';
+
+				document.querySelector('.progress').innerHTML = progress;
+			}
+
+			xhr.open('post', '06.php');
+
+			xhr.send(formData);
+
+			xhr.onreadystatechange = function () {
+				if(xhr.readyState == 4 && xhr.status == 200) {
+					console.log(xhr.responseText);
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

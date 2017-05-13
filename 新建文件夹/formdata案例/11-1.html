@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		var xhr = new XMLHttpRequest;
+
+		xhr.open('get', '11-1.php');
+
+		// 设置超时时间，可以自动关闭请求
+		xhr.timeout = 3000;
+
+		xhr.ontimeout = function () {
+			alert('您超时了');
+			// 还可以做其它更多有意义的事
+			// 比如提示更友好
+			// 比如还原loading状态
+			// 比如取消半透明的遮罩层
+		}
+
+		xhr.send(null);
+
+		xhr.onreadystatechange = function () {
+			if(xhr.readyState == 4 && xhr.status == 200) {
+				console.log('返回结果了');
+			}
+		}
+	</script>
+</body>
+</html>

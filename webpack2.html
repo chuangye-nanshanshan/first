@@ -1,0 +1,1655 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>webpack2</title></head><body><article class="markdown-body"><h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>简介</h1>
+<h3 id="webpack"><a name="user-content-webpack" href="#webpack" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>什么是webpack</h3>
+<p>Webpack 就是一个针对 JavaScript 代码的模块打包工具。<br />
+但实际上它已经演变成了一个针对所有前端代码的管理工具。</p>
+<h3 id="webpack_1"><a name="user-content-webpack_1" href="#webpack_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>为什么要用webpack</h3>
+<p>webpack 通过快速构建一个你的应用的依赖图（配置文件），并按照正确的顺序将它们打包在一起，来简化你的工作流。</p>
+<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>传统模式的问题</h3>
+<ul>
+<li>如果缺少任何一个依赖，或者引入的顺序错误整个应用都无法正常运行。</li>
+<li>如果依赖引入了但是没有用到，那么浏览器还是会下载很多无用的代码。<a href="https://www.zhihu.com/question/41922432">tree shacking webpack2 新特性</a></li>
+</ul>
+<h1 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>核心概念</h1>
+<h3 id="entry-output-loaders-plugins"><code>entry</code>, <code>output</code>, <code>loaders</code>, <code>plugins</code>.</h3>
+<h2 id="entry"><a name="user-content-entry" href="#entry" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>entry</h2>
+<h4 id="webpack-enter-point-enter-point-webpack"><a name="user-content-webpack-enter-point-enter-point-webpack" href="#webpack-enter-point-enter-point-webpack" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>webpack 创建了一幅应用所需依赖的图。这幅图的起点就是 <strong><em>enter point</em></strong> ， <strong><em>enter point</em></strong> 告诉 webpack 从哪开始，并根据依赖图去打包所需。</h4>
+<h3 id="_4"><em>语法：</em></h3>
+<ul>
+<li>
+<p>单入口 [简写]：<br />
+Usage: <code>entry: string|Array&lt;string&gt;</code><br />
+<pre><code class="js">const config = {
+  entry: './path/to/my/entry/file.js'
+};
+
+module.exports = config;
+</code></pre></p>
+</li>
+<li>
+<p>对象语法：<br />
+Usage: <code>entry: {[entryChunkName: string]: string|Array&lt;string&gt;}</code><br />
+<pre><code class="js">const config = {
+  entry: {
+    app: './src/app.js',
+    vendors: './src/vendors.js'
+  }
+};
+</code></pre></p>
+</li>
+</ul>
+<h3 id="_5"><em>场景：</em></h3>
+<ul>
+<li>分离 app 和 第三方库（vendor）的入口</li>
+</ul>
+<p>接着上例，字面上来看是告诉 webpack 分别创建以 <code>app.js</code> 和 <code>vendor.js</code> 为起点的依赖图。这两个图是完全分离和相互独立的（webpack 单独引导每个打包）。常见于只有一个入口的单页面应用（不包括第三方库的入口）</p>
+<p>why？这样设置允许你利用 <code>CommonsChunckPlugin</code> 并从 APP 打包文件中提取任何第三方库的引用到 vendor 包中（vendor bundle），如果 app 包没有第三方库的代码，就可以获得一个公共模式，在 webpack 中称为<a href="https://webpack.js.org/guides/caching">长效第三方库缓存</a></p>
+<ul>
+<li>多页面应用<br />
+<pre><code class="js">const config = {
+  entry: {
+    pageOne: './src/pageOne/index.js',
+    pageTwo: './src/pageTwo/index.js',
+    pageThree: './src/pageThree/index.js'
+  }
+};
+</code></pre></li>
+</ul>
+<p>上例表示我们希望有3个分离的依赖图。</p>
+<p>why？在多页面应用中，服务器将会给你一个新的 HTML 文件，页面会重新加载这个新文件和其他资源，这给了我们独一无二的机会来做许多事：</p>
+<ul>
+<li>利用 <code>CommonsChunkPlugin</code> 创建每个页面公共代码的包。当新增入口的时候，多页应用可以复用其他入口的许多代码、模块</li>
+</ul>
+<h2 id="output"><a name="user-content-output" href="#output" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>output</h2>
+<h4 id="webpack_2"><a name="user-content-webpack_2" href="#webpack_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>告诉 webpack 把应用打包到哪里，以及对打包后的文件进行进一步操作。</h4>
+<p>相关设置影响 output 的编译，<code>output</code> 配置告诉 webpack 如何编译文件，注意，虽然可以有多个入口（<code>entry</code>）,但只能指定一个 <code>output</code>。</p>
+<h3 id="_6"><em>用法</em></h3>
+<p><code>output</code> 至少需要配置以下两个属性：<br />
+1. <code>filename</code> 给编译后的文件起一个你喜欢的名字：<code>// main.js || bundle.js || index.js</code><br />
+2. <code>output.path</code> 设置打包后文件的存放路径（<strong>绝对路径</strong>）</p>
+<h3 id="options"><em>常用 options</em></h3>
+<h4 id="outputfilename"><code>output.filename</code></h4>
+<p>指定每个输出文件的文件名，切勿指定一个绝对路径！<br />
+<code>output.path</code> 选项决定文件写在哪里。<code>filename</code> 只是用来命名单独的文件。</p>
+<h5 id="_7"><strong>单入口</strong></h5>
+<pre><code class="js">{
+  entry: './src/app.js',
+  output: {
+    filename: 'bundle.js',
+    path: __dirname + '/build'
+  }
+}
+
+// writes to disk: ./build/bundle.js
+</code></pre>
+
+<h5 id="_8"><strong>多入口</strong></h5>
+<p>如果你的配置创建了一个以上的“数据块 chunk ” (例如：多入口或使用 CommonsChunkPlugin 插件时)，应当使用“替代 substitutions”  确保每个文件都有唯一的名字。</p>
+<p><code>[name]</code> :替换为 chunk 名</p>
+<p><code>[hash]</code> :替换为编译的 hash （每次编译后文件的 hash 都不同）</p>
+<p><code>[chunkhash]</code> :替换为 chunk 的hash （只要源文件未被修改 hash 就不会改变，常用于优化，避免浏览器重复下载第三方库 “vendor”）</p>
+<h2 id="entry-app-srcappjs-search-srcsearchjs-output-filename-namejs-path-__dirname-build-writes-to-disk-buildappjs-buildsearchjs"><a name="user-content-entry-app-srcappjs-search-srcsearchjs-output-filename-namejs-path-__dirname-build-writes-to-disk-buildappjs-buildsearchjs" href="#entry-app-srcappjs-search-srcsearchjs-output-filename-namejs-path-__dirname-build-writes-to-disk-buildappjs-buildsearchjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a><pre><code class="js">{
+  entry: {
+    app: './src/app.js',
+    search: './src/search.js'
+  },
+  output: {
+    filename: '[name].js',
+    path: __dirname + '/build'
+  }
+}
+
+// writes to disk: ./build/app.js, ./build/search.js
+</code></pre></h2>
+<h4 id="outputpath"><code>output.path</code></h4>
+<p>输出目录是一个绝对路径（必须）</p>
+<p><code>[hash]</code> 替换为编译的 hash</p>
+<p>config.js:<br />
+<pre><code class="js">output: {
+    path: &quot;/home/proj/public/assets&quot;,
+    publicPath: &quot;/assets/&quot;
+}
+</code></pre><br />
+index.html:<br />
+<pre><code class="html">&lt;head&gt;
+  &lt;link href=&quot;/assets/spinner.gif&quot;/&gt;
+&lt;/head&gt;
+</code></pre><br />
+<a href="https://webpack.js.org/concepts/output/">其他 options </a></p>
+<h2 id="loader"><a name="user-content-loader" href="#loader" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>loader</h2>
+<p>loader 是对源代码模块的转换。当你 <code>require()</code> 或 ‘加载’文件时，它允许你进行预处理，因此 loaders 就像其他构建工具的 ‘task’，并且提供了强大的方法来控制前端构建进程。loaders 可以将其他语言转换为 javascript ，也可以将内嵌图片作为 data URLs，甚至可以在 javascript 中 <code>require()</code> CSS 文件</p>
+<h4 id="webpack-webpack"><a name="user-content-webpack-webpack" href="#webpack-webpack" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>其目标是将项目中所有的资源变成 webpack 关心的事，而不是浏览器关心的事。（但并不意味着所有的东西都需要打包在一起），webpack 将<strong>每个文件都视为一个模块</strong>。</h4>
+<p>随着文件资源被加载进依赖图，webpack 中的 loaders 将这些文件转换成模块</p>
+<p>loaders 有两个目的 ：</p>
+<ol>
+<li>确定哪些文件需要通过某个 loader 转换 （<code>test</code> 属性）</li>
+<li>转换那些文件以便能将它加入依赖图 （最终加入打包）（<code>use</code> 属性）</li>
+</ol>
+<h3 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>例子</h3>
+<p>loaders 可以告诉 webpack 加载 CSS 文件或者将 TypeScript 转为 JavaScript。</p>
+<p>首先安装相应的 loaders：</p>
+<p><pre><code class="js">npm install --save-dev css-loader
+npm install --save-dev ts-loader
+</code></pre><br />
+然后，配置 <code>webpack.config.js</code> 让 <code>css-loader</code> 、<code>ts-loader</code> 加载对应的 <code>.css</code> 文件和 <code>.ts</code> 文件<br />
+<pre><code class="js">module.export = {
+    module: {
+        rules: [
+            {test:/\.css$/, use: 'css-loader'},
+            {test:/\.ts$/, use: 'ts-loader'}
+            }
+        ]
+    }
+}
+</code></pre><br />
+根据 configuration options， 以下写法定义完全相同：<br />
+<pre><code class="js">{test: /\.css$/, loader: 'css-loader'}
+//or
+{test: /\.css$/, use: 'css-loader'}
+//or
+{test: /\.css$/, use: {
+    loader: 'css-loader',
+    options: {}
+}}
+</code></pre></p>
+<h3 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>配置</h3>
+<p>有三种方式来使用 loaders :<br />
++ 通过配置文件<br />
++ <code>require</code> 语句显式引用<br />
++ 通过 CLI</p>
+<h4 id="webpackconfigjs"><a name="user-content-webpackconfigjs" href="#webpackconfigjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>通过 <code>webpack.config.js</code></h4>
+<p><code>webpack.config.js</code> 可以通过 <code>module.rules</code> 指定 loaders。这样可以简明的展示 loaders，并帮助保持整洁的代码，同时能总览各个 loader。<br />
+<pre><code class="js">  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader'},
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
+      }
+    ]
+  }
+</code></pre></p>
+<h4 id="require"><a name="user-content-require" href="#require" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>通过 <code>require</code></h4>
+<p>也可以通过  <code>require</code> 语句 （或 <code>define</code>, <code>require.ensure</code>, etc.）指定 loaders。用 <code>!</code> 分离 loaders ，每个部分相对于当前目录进行解析。<br />
+<pre><code class="js">require('style-loader!css-loader?modules!./styles.css');
+</code></pre><br />
+可以通过 <code>!</code> 前缀重写任意 loaders。</p>
+<p>options 可以通过查询参数传递，就像在网页上一样（?key=value&amp;foo=bar）,也可以用 JSON 对象 （?{&ldquo;key&rdquo;:&rdquo;value&rdquo;,&rdquo;foo&rdquo;:&rdquo;bar&rdquo;}）。</p>
+<blockquote>
+<p>在可能的情况下，最好还是用 <code>module.rules</code></p>
+</blockquote>
+<p>通过 CLI<br />
+<pre><code class="shell">webpack --module-bind jade-loader --module-bind 'css=style-loader!css-loader'
+</code></pre></p>
+<h3 id="loader_1"><a name="user-content-loader_1" href="#loader_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>loader 特性</h3>
+<ul>
+<li>可以链式编程</li>
+<li>可以同步也可以异步</li>
+<li>可以在 node 环境运行</li>
+<li>接受查询参数</li>
+<li>可以通过 options 对象配置</li>
+<li>普通模块可以导出 loader 并且</li>
+<li>插件可以让 loader 拥有更多特性。</li>
+<li>Loader 可以分发出附加的任意文件。</li>
+</ul>
+<p><em>例子</em></p>
+<p><pre><code class="js">const path = require('path');
+
+const config = {
+  entry: './path/to/my/entry/file.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'my-first-webpack.bundle.js'
+  },
+  module: {
+    rules: [
+      {test: /\.(js|jsx)$/, use: 'babel-loader'}
+    ]
+  }
+};
+
+module.exports = config;
+</code></pre><br />
+上面的代码告诉 webpack</p>
+<blockquote>
+<p>如果在 <code>require() / import</code> 语句中解析到 &lsquo;.js&rsquo; 或 &lsquo;.jsx&rsquo; 时，首先通过 <code>babekl-lader</code> 转换，再加入打包</p>
+<p>注意：在 webpack 中定义的是 <code>module.rules</code> 而不是 <code>rules</code></p>
+</blockquote>
+<h3 id="-plugins"><a name="user-content--plugins" href="#-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>- plugins</h3>
+<h4 id="loaders-plugins-webpack"><a name="user-content-loaders-plugins-webpack" href="#loaders-plugins-webpack" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>loaders 只是在文件层次进行了转换，而 plugins 通常是用作对整个打包模块执行操作和定制功能。webpack 的插件系统是非常强大和可定制化的。</h4>
+<p><em>用法</em><br />
+因为 <code>plugins</code> 可以接收 参数/设置，所有必须给 <code>plugins</code> 属性传递一个 <code>new</code> 实例。</p>
+<pre><code class="js">const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
+const webpack = require('webpack'); //to access built-in plugins
+const path = require('path');
+
+const config = {
+  entry: './path/to/my/entry/file.js',
+  output: {
+    filename: 'my-first-webpack.bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+    new HtmlWebpackPlugin({template: './src/index.html'})
+  ]
+};
+
+module.exports = config;
+</code></pre>
+
+<p>只需要 <code>require()</code> 相应的插件，并将它加入 plugins 数组，就可以使用插件，多数插件都可以通过选项配置。为了能够出于不同目的多次使用一个插件，需要通过 <code>new</code> 命令创建实例</p>
+<h1 id="_11"><a name="user-content-_11" href="#_11" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>向导</h1>
+<h2 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>基本用法</h2>
+<p>CLI:<br />
+<pre><code class="js">webpack app/index.js dist/bundle.js
+</code></pre><br />
+With a config:<br />
+<pre><code class="js">var path = require('path');
+
+module.exports = {
+  entry: './app/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+</code></pre></p>
+<h2 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>代码分割</h2>
+<p>代码分割可以将代码分割为不同的 bundles 以便按需加载，如果使用正确可以极大的改进加载时间。</p>
+<h3 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>分割资源以进行缓存和并行加载</h3>
+<h4 id="_15"><a name="user-content-_15" href="#_15" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>第三方库分割</h4>
+<p>由于第三方库并不像程序代码那样经常变动，我们可以利用浏览器的缓存机制，将这些库长期的保存在终端用户的设备中。因此，第三方库的 filename 的 <code>[hash]</code> 部分不同于程序代码，必须保持不变</p>
+<h4 id="css"><a name="user-content-css" href="#css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS 分割</h4>
+<p>也可以将样式单独打包，以实现样式和逻辑分离，提高样式的可缓存性，并允许浏览器并行加载样式和程序代码，以避免 FOUC (无样式内容闪烁)</p>
+<h3 id="_16"><a name="user-content-_16" href="#_16" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>按需分割代码</h3>
+<p>需要用户预先在 configuration 中配置分割点，这对多个 chunk 的代码非常有用，允许用户按需加载资源。</p>
+<h2 id="code-splitting-css"><a name="user-content-code-splitting-css" href="#code-splitting-css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>code splitting - CSS</h2>
+<p>用 webpack 打包时，就像引入其他模块一样引入 CSS ，并且使用 <code>css-loader</code> （将 CSS 输出为 JS 模块），然后应用 <code>ExtractTextWebpackPlugin</code> （提取打包的 CSS 并输出 CSS 文件）</p>
+<h3 id="css_1"><a name="user-content-css_1" href="#css_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>引入 CSS</h3>
+<pre><code class="js">import 'bootstrap/dist/css/bootstrap.css';
+</code></pre>
+
+<h3 id="css-loader"><a name="user-content-css-loader" href="#css-loader" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用 <code>css-loader</code></h3>
+<p><pre><code class="js">module.exports = {
+    module: {
+        rules: [{
+            test: /\.css$/,
+            use: 'css-loader'
+        }]
+    }
+}
+</code></pre><br />
+这时，CSS 会和 JS 代码打包到一起。这样的话浏览器就不能异步并行加载 CSS，所以，浏览器会在加载完整个 js 打包文件后，再去渲染。</p>
+<h3 id="extracttextwebpackplugin"><a name="user-content-extracttextwebpackplugin" href="#extracttextwebpackplugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用 <code>ExtractTextWebpackPlugin</code></h3>
+<p>安装插件：<br />
+<pre><code class="js">npm i --save-dev extract-text-webpack-plugin
+</code></pre><br />
+配置文件：<br />
+<pre><code class="js">+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+module.exports = {
+    module: {
+         rules: [{
+             test: /\.css$/,
+-            use: 'css-loader'
++            use: ExtractTextPlugin.extract({
++                use: 'css-loader'
++            })
+         }]
+     },
++    plugins: [
++        new ExtractTextPlugin('styles.css'),
++    ]
+}
+</code></pre><br />
+<a href="https://webpack.js.org/plugins/extract-text-webpack-plugin/#modify-filename">如何修改输出 CSS 的文件名？</a></p>
+<h2 id="code-spltting-libraries"><a name="user-content-code-spltting-libraries" href="#code-spltting-libraries" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>code spltting - Libraries</h2>
+<h3 id="_17"><a name="user-content-_17" href="#_17" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>多入口</h3>
+<p><pre><code class="js">var path = require('path');
+
+module.exports = function(env) {
+    return {
+        entry: {
+            main: './index.js',
+            vendor: 'moment'
+        },
+        output: {
+            filename: '[name].[chunkhash].js',
+            path: path.resolve(__dirname, 'dist')
+        }
+    }
+}
+</code></pre><br />
+这样配置，就可以输出两个包了，但是检查文件后，发现两个文件中都有 <code>moment</code> 的代码，这是因为主文件依赖于 <code>moment</code>，为了解决这个跟问题，<br />
+就要用 <code>CpmmonsChunkPlugin</code></p>
+<h3 id="cpmmonschunkplugin"><a name="user-content-cpmmonschunkplugin" href="#cpmmonschunkplugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CpmmonsChunkPlugin</h3>
+<p>这是一个很复杂的插件，他从根本上帮助我们从不同的包提取公共的部分，并加入公共包，如果没有公共包就自动创建一个。<br />
+<pre><code class="js">var webpack = require('webpack');
+var path = require('path');
+
+module.exports = function(env) {
+    return {
+        entry: {
+            main: './index.js',
+            vendor: 'moment'
+        },
+        output: {
+            filename: '[name].[chunkhash].js',
+            path: path.resolve(__dirname, 'dist')
+        },
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor' // Specify the common bundle's name.
+            })
+        ]
+    }
+}
+</code></pre><br />
+这时 第三方库 就只在 vendor包 中了</p>
+<h3 id="implicit-common-vendor-chunk"><a name="user-content-implicit-common-vendor-chunk" href="#implicit-common-vendor-chunk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>隐式公共第三方 （implicit common vendor chunk）</h3>
+<pre><code class="js">var webpack = require('webpack');
+var path = require('path');
+
+module.exports = function() {
+    return {
+        entry: {
+            main: './index.js'
+        },
+        output: {
+            filename: '[name].[chunkhash].js',
+            path: path.resolve(__dirname, 'dist')
+        },
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                minChunks: function (module) {
+                   // this assumes your vendor imports exist in the node_modules directory
+                   return module.context &amp;&amp; module.context.indexOf('node_modules') !== -1;
+                }
+            })
+        ]
+    };
+}
+</code></pre>
+
+<h3 id="manifest-file"><a name="user-content-manifest-file" href="#manifest-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>清单文件 (Manifest File)</h3>
+<p>但是，当我们改变程序代码并再次执行 webpack，vendor 文件的 hash 改变了。尽管分离了 vendor 和 main ，但是当 main 文件改变时，vendor 也会跟着改变。这意味着我们并没有利用到浏览器的缓存能力。</p>
+<p>这个问题在每次歌谱见得时候都会发生，webpack 生成一些 webpack 运行时文件来帮助它完成自己的工作。当只有一个打包文件时，运行时代码存在于当中，但当生成多个打包时，运行时存在与公共模块中。</p>
+<p>为了避免这种现象，我们需要把运行时提取出来放到 manifest 文件中。尽管又多创建了另一个包，但是这个消耗被 vendor 文件的长期缓存得来的好处抵消了。</p>
+<p><pre><code class="js">var webpack = require('webpack');
+var path = require('path');
+
+module.exports = function(env) {
+    return {
+        entry: {
+            main: './index.js',
+            vendor: 'moment'
+        },
+        output: {
+            filename: '[name].[chunkhash].js',
+            path: path.resolve(__dirname, 'dist')
+        },
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin({
+                names: ['vendor', 'manifest'] // Specify the common bundle's name.
+            })
+        ]
+    }
+};
+</code></pre><br />
+implicit common vendor chunk:<br />
+<pre><code class="js">var webpack = require('webpack');
+var path = require('path');
+
+module.exports = function() {
+    return {
+        entry: {
+            main: './index.js' //Notice that we do not have an explicit vendor entry here
+        },
+        output: {
+            filename: '[name].[chunkhash].js',
+            path: path.resolve(__dirname, 'dist')
+        },
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                minChunks: function (module) {
+                   // this assumes your vendor imports exist in the node_modules directory
+                   return module.context &amp;&amp; module.context.indexOf('node_modules') !== -1;
+                }
+            }),
+            //CommonChunksPlugin will now extract all the common modules from vendor and main bundles
+            new webpack.optimize.CommonsChunkPlugin({ 
+                name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
+            })
+        ]
+    };
+}
+</code></pre></p>
+<h2 id="babel"><a name="user-content-babel" href="#babel" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用 babel</h2>
+<h3 id="babel_1"><a name="user-content-babel_1" href="#babel_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>安装 babel</h3>
+<pre><code class="shell">npm install --save-dev babel-core babel-loader babel-plugin-syntax-dynamic-import babel-preset-es2015
+# for this example
+npm install --save moment
+</code></pre>
+
+<p>index.js<br />
+<pre><code class="js">function determineDate() {
+  import('moment')
+    .then(moment =&gt; moment().format('LLLL'))
+    .then(str =&gt; console.log(str))
+    .catch(err =&gt; console.log('Failed to load moment', err));
+}
+
+determineDate();
+</code></pre></p>
+<p>webpack.config.js<br />
+<pre><code class="js">module.exports = {
+  entry: './index-es2015.js',
+  output: {
+    filename: 'dist.js',
+  },
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          presets: [['es2015', {modules: false}]],
+          plugins: ['syntax-dynamic-import']
+        }
+      }]
+    }]
+  }
+};
+</code></pre></p>
+<h1 id="_18"><a name="user-content-_18" href="#_18" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>生产环境构建</h1>
+<h2 id="_19"><a name="user-content-_19" href="#_19" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>自动方式</h2>
+<p><code>webpack -p</code> (等效于 <code>webpack --optimize-minimize --define process.env.NODE_ENV="'production'"</code>) 执行了以下几步：<br />
++ 用 <code>UglifyJsPlugin</code> 压缩<br />
++ 运行 <code>LoaderOptionsPlugin</code><br />
++ 设置 Node 环境变量</p>
+<h2 id="_20"><a name="user-content-_20" href="#_20" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>手动方式</h2>
+<p>最好的方式是建立一个 base 文件，然后用 ‘webpack-merge’  与其他环境自己的配置文合并：<br />
+base.js :<br />
+<pre><code class="js">module.exports = function() {
+    return {
+        entry: {
+            'polyfills': './src/polyfills.ts',
+            'vendor': './src/vendor.ts',
+            'main': './src/main.ts'
+
+        },
+        output: {
+            path: path.join(__dirname, '/../dist/assets'),
+            filename: '[name].bundle.js',
+            publicPath: publicPath,
+            sourceMapFilename: '[name].map'
+        },
+        resolve: {
+            extensions: ['.ts', '.js', '.json'],
+            modules: [path.join(__dirname, 'src'), 'node_modules']
+
+        },
+        module: {
+            rules: [{
+                test: /\.ts$/,
+                use: [
+                    'awesome-typescript-loader',
+                    'angular2-template-loader'
+                ],
+                exclude: [/\.(spec|e2e)\.ts$/]
+            }, {
+                test: /\.css$/,
+                use: ['to-string-loader', 'css-loader']
+            }, {
+                test: /\.(jpg|png|gif)$/,
+                use: 'file-loader'
+            }, {
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
+                use: {
+                  loader: 'url-loader',
+                  options: {
+                    limit: 100000
+                  }
+                }
+            }],
+        },
+        plugins: [
+            new ForkCheckerPlugin(),
+
+            new webpack.optimize.CommonsChunkPlugin({
+                name: ['polyfills', 'vendor'].reverse()
+            }),
+            new HtmlWebpackPlugin({
+                template: 'src/index.html',
+                chunksSortMode: 'dependency'
+            })
+        ],
+    };
+}
+
+</code></pre><br />
+prod.js:<br />
+<pre><code class="js">const webpackMerge = require('webpack-merge');
+
+const commonConfig = require('./base.js');
+
+module.exports = function(env) {
+    return webpackMerge(commonConfig(), {
+        plugins: [
+            new webpack.LoaderOptionsPlugin({
+                minimize: true,
+                debug: false
+            }),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('production')
+                }
+            }),
+            new webpack.optimize.UglifyJsPlugin({
+                beautify: false,
+                mangle: {
+                    screw_ie8: true,
+                    keep_fnames: true
+                },
+                compress: {
+                    screw_ie8: true
+                },
+                comments: false
+            })
+        ]
+    })
+}
+</code></pre></p>
+<h3 id="_21"><a name="user-content-_21" href="#_21" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缓存</h3>
+<p>在前端发布体系中，为了实现增量发布，我们一般都会对静态资源加上md5的文件后缀，保证每次发布的文件都没有缓存，同时对于未修改文件，不会受发布的影响，最大程度利用缓存。</p>
+<p>在 webpack 中，实现文件名增加 md5 的指纹其实很简单，只需要将 output 的filename 修改为：</p>
+<p>filename: &ldquo;[name].[chunkhash].js&rdquo;</p>
+<p>其中 chunkhash 即为每个文件的指纹。但是这里我们会遇到两个问题：</p>
+<ol>
+<li>html中如何引入正确的文件地址？</li>
+</ol>
+<p>由于生产的md5文件名会类似于：main.70b594fe8b07bcedaa98.js，我们无法预测在html中的引入路径。我们可以借助插件来实现：</p>
+<p>对于前后端分离的项目，直接使用 <a href="https://github.com/jantimon/html-webpack-plugin">html-webpack-plugin</a>，可以自动帮你把正确的资源地址插入html中。</p>
+<p>而对于html需要放在后端的项目，可以使用 <a href="https://github.com/kossnocorp/assets-webpack-plugin">assets-webpack-plugin</a> 将生产的文件md5导出，然后在发布的时候同步给后端。</p>
+<ol>
+<li>使用了md5指纹之后发现每次打包还是会发生变化？</li>
+</ol>
+<p>这是由于webpack的处理机制导致的，webpack每次打包会把每个模块的配置信息如文件名、文件顺序、文件md5等信息作为配置打入js中，以便于其进行模块管理，而这部内容，每次打包都有可能发生变化，导致整个js文件名每次都会发生变化。</p>
+<p>webpack提供了一个 manifest 的机制来剥出这个配置文件。我们需要使用 CommonsChunkPlugin 来将其剥离，同时使用 chunk-manifest-webpack-plugin 读取其内容导出另外一个文件，防止其内容变化导致整个js文件指纹发生变化：<br />
+<pre><code class="js">// webpack.config.js
+var ChunkManifestPlugin = require(&quot;chunk-manifest-webpack-plugin&quot;);
+
+module.exports = {
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: [&quot;manifest&quot;], // extracted manifest
+      minChunks: Infinity,
+    }),
+    new ChunkManifestPlugin({
+      filename: &quot;chunk-manifest.json&quot;,
+      manifestVariable: &quot;webpackManifest&quot;
+    })
+  ]
+};
+</code></pre><br />
+当然，对于前后端分离的项目，你也可以将这部分内容直接打入html以减少一个请求，使用 inline-manifest-webpack-plugin（ inline-manifest-webpack-plugin ） 即可。</p>
+<h3 id="webpack-dev-server"><a name="user-content-webpack-dev-server" href="#webpack-dev-server" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>webpack-dev-server</h3>
+<p><pre><code class="js">npm install webpack-dev-server --save-dev
+npm install express webpack-dev-middleware --save-dev
+</code></pre><br />
+<pre><code class="js">var express = require(&quot;express&quot;);
+var webpackDevMiddleware = require(&quot;webpack-dev-middleware&quot;);
+var webpack = require(&quot;webpack&quot;);
+var webpackConfig = require(&quot;./webpack.config&quot;);
+
+var app = express();
+var compiler = webpack(webpackConfig);
+
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: &quot;/&quot; // Same as `output.publicPath` in most cases.
+}));
+
+app.listen(3000, function () {
+  console.log(&quot;Listening on port 3000!&quot;);
+});
+</code></pre></p>
+<p>推荐阅读：</p>
+<ul>
+<li><a href="http://www.tuicool.com/articles/F3E3Ube"><a href="http://www.tuicool.com/articles/F3E3Ube"><a href="http://www.tuicool.com/articles/F3E3Ube">http://www.tuicool.com/articles/F3E3Ube</a></a></a></li>
+<li><a href="http://www.open-open.com/lib/view/open1483317889255.html"><a href="http://www.open-open.com/lib/view/open1483317889255.html"><a href="http://www.open-open.com/lib/view/open1483317889255.html">http://www.open-open.com/lib/view/open1483317889255.html</a></a></a></li>
+<li><a href="http://mp.weixin.qq.com/s/tfowBOp_4SDb1cT7VyHRuQ"><a href="http://mp.weixin.qq.com/s/tfowBOp_4SDb1cT7VyHRuQ"><a href="http://mp.weixin.qq.com/s/tfowBOp_4SDb1cT7VyHRuQ">http://mp.weixin.qq.com/s/tfowBOp_4SDb1cT7VyHRuQ</a></a></a></li>
+<li><a href="http://vue-loader.vuejs.org/en/"><a href="http://vue-loader.vuejs.org/en/"><a href="http://vue-loader.vuejs.org/en/">http://vue-loader.vuejs.org/en/</a></a></a></li>
+</ul></article></body></html>
